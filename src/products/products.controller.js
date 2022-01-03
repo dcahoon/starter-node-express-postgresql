@@ -23,9 +23,8 @@ async function productExists(req, res, next) {
     .catch(next)
 } */
 
-async function read(req, res) {
-  const { product: data } = res.locals
-  res.json({ data })
+async function read(req, res, next) {
+  res.json({ data: res.locals.product })
 }
 
 async function list(req, res, next) {
